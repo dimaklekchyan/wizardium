@@ -170,7 +170,7 @@
 		130B36FD7E5562C456A8C51E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = 3B95C95331E3E7C960420CF5 /* Configuration */;
-			baseConfigurationReferenceRelativePath = Config.xcconfig;
+			baseConfigurationReferenceRelativePath = Debug.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -263,7 +263,7 @@
 		A5918427608824120F8C11D5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = 3B95C95331E3E7C960420CF5 /* Configuration */;
-			baseConfigurationReferenceRelativePath = Config.xcconfig;
+			baseConfigurationReferenceRelativePath = Release.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;

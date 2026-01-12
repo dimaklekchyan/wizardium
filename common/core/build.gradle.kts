@@ -5,9 +5,11 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.kotlinSerialization)
 }
 
 kotlin {
+    jvmToolchain(17)
     androidTarget {
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_17)
@@ -21,25 +23,39 @@ kotlin {
     
     sourceSets {
         commonMain.dependencies {
-            implementation(projects.common.res)
-
             implementation(compose.runtime)
             implementation(compose.foundation)
-            implementation(compose.material3)
-            implementation(compose.ui)
-            implementation(compose.materialIconsExtended)
-            implementation(compose.components.uiToolingPreview)
-            implementation(compose.components.resources)
+
+            implementation(libs.kotlin.serialization)
+            implementation(libs.koin.core)
+
+            implementation(libs.ktor.core)
+            implementation(libs.ktor.negotiation)
+            implementation(libs.ktor.serialization)
+            implementation(libs.ktor.logging)
+
+            implementation(libs.room.runtime)
+            implementation(libs.sqlite.bundled)
+        }
+
+        androidMain.dependencies {
+            implementation(libs.ktor.android)
+        }
+        iosMain.dependencies {
+            implementation(libs.ktor.ios)
         }
     }
 }
 
 android {
 
-    namespace = "com.dimaklekchyan.wizardium.design_system"
+    namespace = "com.dimaklekchyan.wizardium.core"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()
+    }
+    buildFeatures {
+        buildConfig = true
     }
 }
 

@@ -10,7 +10,7 @@ plugins {
 kotlin {
     androidTarget {
         compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_11)
+            jvmTarget.set(JvmTarget.JVM_17)
         }
     }
     
@@ -25,13 +25,12 @@ kotlin {
     }
     
     sourceSets {
-        androidMain.dependencies {
-            implementation(compose.preview)
-            implementation(libs.androidx.activity.compose)
-        }
         commonMain.dependencies {
+            implementation(projects.common.core)
             implementation(projects.common.res)
             implementation(projects.common.designSystem)
+
+            implementation(libs.koin.core)
 
             implementation(compose.runtime)
             implementation(compose.foundation)
@@ -39,8 +38,10 @@ kotlin {
             implementation(compose.ui)
             implementation(compose.components.uiToolingPreview)
             implementation(compose.components.resources)
-            implementation(libs.androidx.lifecycle.viewmodelCompose)
-            implementation(libs.androidx.lifecycle.runtimeCompose)
+        }
+        androidMain.dependencies {
+            implementation(compose.preview)
+            implementation(libs.androidx.activity.compose)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
