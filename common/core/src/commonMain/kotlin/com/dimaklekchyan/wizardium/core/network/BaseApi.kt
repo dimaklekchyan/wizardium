@@ -29,7 +29,6 @@ open class BaseApi(
         decodeTo: KType = typeOf<R>(),
         decodeErrorTo: KType = typeOf<R>()
     ): Result<R> {
-
         return request<R>(
             url = url,
             decodeTo = decodeTo,
@@ -62,7 +61,6 @@ open class BaseApi(
         decodeTo: KType = typeOf<R>(),
         decodeErrorTo: KType = typeOf<R>()
     ): Result<R> {
-
         return request<R>(
             url = url,
             decodeTo = decodeTo,
@@ -102,7 +100,6 @@ open class BaseApi(
         decodeTo: KType,
         decodeErrorTo: KType,
     ): Result<R> {
-
         return try {
             val response =  httpClient.request(urlString = url) { requestBuilder(this) }
             val body = response.bodyAsText()
