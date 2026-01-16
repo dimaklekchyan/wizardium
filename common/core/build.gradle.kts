@@ -27,6 +27,8 @@ kotlin {
             implementation(compose.foundation)
 
             implementation(libs.kotlin.serialization)
+            implementation(libs.kotlin.datetime)
+
             implementation(libs.koin.core)
 
             implementation(libs.ktor.core)

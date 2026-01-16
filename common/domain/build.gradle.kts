@@ -22,32 +22,15 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             implementation(projects.common.core)
-            implementation(projects.common.domain)
 
-            implementation(libs.kotlin.serialization)
-            implementation(libs.koin.core)
-
-            implementation(libs.ktor.core)
-            implementation(libs.ktor.negotiation)
-            implementation(libs.ktor.serialization)
-            implementation(libs.ktor.logging)
-
-            implementation(libs.room.runtime)
-            implementation(libs.sqlite.bundled)
-        }
-
-        androidMain.dependencies {
-            implementation(libs.ktor.android)
-        }
-        iosMain.dependencies {
-            implementation(libs.ktor.ios)
+            implementation(libs.kotlin.datetime)
         }
     }
 }
 
 android {
 
-    namespace = "com.dimaklekchyan.wizardium.data"
+    namespace = "com.dimaklekchyan.wizardium.domain"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()

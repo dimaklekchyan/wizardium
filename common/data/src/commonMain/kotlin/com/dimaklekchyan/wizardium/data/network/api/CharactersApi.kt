@@ -4,19 +4,17 @@ import com.dimaklekchyan.wizardium.core.AppConstants
 import com.dimaklekchyan.wizardium.core.network.BaseApi
 import com.dimaklekchyan.wizardium.data.network.models.CharacterDTO
 import com.dimaklekchyan.wizardium.data.network.models.FacultyDTO
-import com.dimaklekchyan.wizardium.data.network.models.SpellDTO
 import io.ktor.client.HttpClient
 
-interface HarryPotterApi {
+interface CharactersApi {
     suspend fun getCharacters(): Result<List<CharacterDTO>>
     suspend fun getCharactersByFaculty(faculty: FacultyDTO): Result<List<CharacterDTO>>
-    suspend fun getSpells(): Result<List<SpellDTO>>
     suspend fun getCharacterById(id: String): Result<CharacterDTO?>
 }
 
-internal class HarryPotterApiImpl(
+internal class CharactersApiImpl(
     httpClient: HttpClient
-): BaseApi(httpClient), HarryPotterApi {
+): BaseApi(httpClient), CharactersApi {
     override suspend fun getCharacters(): Result<List<CharacterDTO>> {
         return get<List<CharacterDTO>>(
             url = AppConstants.HP_API + "/characters"
@@ -32,12 +30,6 @@ internal class HarryPotterApiImpl(
     override suspend fun getCharacterById(id: String): Result<CharacterDTO?> {
         return get<CharacterDTO>(
             url = AppConstants.HP_API + "character/$id"
-        )
-    }
-
-    override suspend fun getSpells(): Result<List<SpellDTO>> {
-        return get<List<SpellDTO>>(
-            url = AppConstants.HP_API + "spells"
         )
     }
 }
