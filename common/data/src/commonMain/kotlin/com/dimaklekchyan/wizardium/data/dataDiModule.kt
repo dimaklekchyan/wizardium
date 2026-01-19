@@ -15,7 +15,7 @@ import com.dimaklekchyan.wizardium.domain.repositories.CharactersRepository
 import com.dimaklekchyan.wizardium.domain.repositories.SpellsRepository
 import io.ktor.client.HttpClient
 import org.koin.dsl.module
-import ru.travelata.core.coroutines.DispatcherProvider
+import com.dimaklekchyan.wizardium.core.coroutines.DispatcherProvider
 
 val dataDiModule = module {
 

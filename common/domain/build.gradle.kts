@@ -25,6 +25,8 @@ kotlin {
 
             implementation(libs.kotlin.datetime)
             implementation(libs.kotlin.coroutines)
+
+            implementation(libs.koin.core)
         }
     }
 }

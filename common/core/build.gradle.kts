@@ -28,6 +28,7 @@ kotlin {
 
             implementation(libs.kotlin.serialization)
             implementation(libs.kotlin.datetime)
+            implementation(libs.kotlin.viewModel.compose)
 
             implementation(libs.koin.core)
 

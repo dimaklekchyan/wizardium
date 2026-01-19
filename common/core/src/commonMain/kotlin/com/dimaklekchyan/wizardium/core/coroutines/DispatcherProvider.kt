@@ -1,4 +1,4 @@
-package ru.travelata.core.coroutines
+package com.dimaklekchyan.wizardium.core.coroutines
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers

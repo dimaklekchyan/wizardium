@@ -14,7 +14,7 @@ internal class SpellsApiImpl(
 ): BaseApi(httpClient), SpellsApi {
     override suspend fun getSpells(): Result<List<SpellDTO>> {
         return get<List<SpellDTO>>(
-            url = AppConstants.HP_API + "spells"
+            url = AppConstants.HP_API + "/spells"
         )
     }
 }
