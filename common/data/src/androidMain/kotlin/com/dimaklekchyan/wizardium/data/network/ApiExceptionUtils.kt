@@ -1,4 +1,4 @@
-package com.dimaklekchyan.wizardium.core.network
+package com.dimaklekchyan.wizardium.data.network
 
 import java.net.ProtocolException
 import java.net.SocketException

@@ -1,3 +1,3 @@
-package com.dimaklekchyan.wizardium.core.network
+package com.dimaklekchyan.wizardium.data.network
 
 expect fun isInternetConnectionError(ex: Exception): Boolean

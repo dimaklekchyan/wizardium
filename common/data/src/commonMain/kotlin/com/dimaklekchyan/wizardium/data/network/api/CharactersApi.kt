@@ -1,7 +1,7 @@
 package com.dimaklekchyan.wizardium.data.network.api
 
 import com.dimaklekchyan.wizardium.core.AppConstants
-import com.dimaklekchyan.wizardium.core.network.BaseApi
+import com.dimaklekchyan.wizardium.data.network.BaseApi
 import com.dimaklekchyan.wizardium.data.network.models.CharacterDTO
 import com.dimaklekchyan.wizardium.data.network.models.FacultyDTO
 import io.ktor.client.HttpClient

@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinSerialization)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.room)
 }
 
 kotlin {
@@ -25,6 +27,8 @@ kotlin {
             implementation(projects.common.domain)
 
             implementation(libs.kotlin.serialization)
+            implementation(libs.kotlin.datetime)
+
             implementation(libs.koin.core)
 
             implementation(libs.ktor.core)
@@ -45,6 +49,8 @@ kotlin {
     }
 }
 
+private val roomSchemaDirectory = "${rootProject.projectDir}/common/data/schemas"
+
 android {
 
     namespace = "com.dimaklekchyan.wizardium.data"
@@ -52,5 +58,18 @@ android {
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()
     }
+    sourceSets {
+        getByName("androidTest").assets.srcDir(roomSchemaDirectory)
+    }
+}
+
+room {
+    schemaDirectory(roomSchemaDirectory)
+}
+
+dependencies {
+    add("kspAndroid", libs.room.compiler)
+    add("kspIosSimulatorArm64", libs.room.compiler)
+    add("kspIosArm64", libs.room.compiler)
 }
 

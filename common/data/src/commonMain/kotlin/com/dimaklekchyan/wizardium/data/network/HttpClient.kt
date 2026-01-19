@@ -1,4 +1,4 @@
-package com.dimaklekchyan.wizardium.core.network
+package com.dimaklekchyan.wizardium.data.network
 
 import com.dimaklekchyan.wizardium.core.AppConstants
 import com.dimaklekchyan.wizardium.core.appJson

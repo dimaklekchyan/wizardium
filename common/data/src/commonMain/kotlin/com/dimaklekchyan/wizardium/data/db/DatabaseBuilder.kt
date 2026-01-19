@@ -1,4 +1,4 @@
-package com.dimaklekchyan.wizardium.core.db
+package com.dimaklekchyan.wizardium.data.db
 
 import androidx.room.RoomDatabase
 import com.dimaklekchyan.wizardium.core.AppContext

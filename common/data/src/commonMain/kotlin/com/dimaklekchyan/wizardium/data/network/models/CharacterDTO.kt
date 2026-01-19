@@ -21,7 +21,7 @@ data class CharacterDTO(
     val gender: String,
 
     @SerialName("house")
-    val house: String,
+    val faculty: String,
 
     @SerialName("dateOfBirth")
     val dateOfBirth: String?,

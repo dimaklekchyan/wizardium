@@ -1,4 +1,4 @@
-package com.dimaklekchyan.wizardium.core.network
+package com.dimaklekchyan.wizardium.data.network
 
 import io.ktor.client.engine.*
 import io.ktor.client.engine.darwin.Darwin

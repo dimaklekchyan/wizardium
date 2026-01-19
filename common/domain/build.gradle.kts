@@ -24,6 +24,7 @@ kotlin {
             implementation(projects.common.core)
 
             implementation(libs.kotlin.datetime)
+            implementation(libs.kotlin.coroutines)
         }
     }
 }

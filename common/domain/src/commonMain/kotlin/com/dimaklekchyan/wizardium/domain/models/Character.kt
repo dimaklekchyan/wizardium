@@ -8,7 +8,7 @@ data class Character(
     val alternateNames: List<String>,
     val species: String,
     val gender: String,
-    val house: String,
+    val faculty: String,
     val dateOfBirth: LocalDate?,
     val yearOfBirth: Int?,
     val wizard: Boolean,
